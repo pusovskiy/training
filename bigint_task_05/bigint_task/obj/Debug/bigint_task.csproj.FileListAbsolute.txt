@@ -1,7 +1,0 @@
-C:\Users\Yura\source\repos\bigint_task\bigint_task\bin\Debug\bigint_task.exe.config
-C:\Users\Yura\source\repos\bigint_task\bigint_task\bin\Debug\bigint_task.exe
-C:\Users\Yura\source\repos\bigint_task\bigint_task\bin\Debug\bigint_task.pdb
-C:\Users\Yura\source\repos\bigint_task\bigint_task\obj\Debug\bigint_task.csprojResolveAssemblyReference.cache
-C:\Users\Yura\source\repos\bigint_task\bigint_task\obj\Debug\bigint_task.csproj.CoreCompileInputs.cache
-C:\Users\Yura\source\repos\bigint_task\bigint_task\obj\Debug\bigint_task.exe
-C:\Users\Yura\source\repos\bigint_task\bigint_task\obj\Debug\bigint_task.pdb
