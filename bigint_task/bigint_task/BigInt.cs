@@ -157,10 +157,10 @@ namespace bigint_task
             }
             
         }
-        public void Multiply(int number)
+        public void Multiply(long number)
         {
-            string number_int = Convert.ToString(number);
-            Multiply(number_int);
+            string number_long = Convert.ToString(number);
+            Multiply(number_long);
         }
 
 
