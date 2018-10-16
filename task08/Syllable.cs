@@ -38,14 +38,6 @@ namespace Syllable
                             result.Insert((i + 1), '-');
                         }
             }
-            for (int i =result.Length-1;i < result.Length; i++)
-            {
-                if (result[i] == '-')
-                {
-                    result.Remove(i, 1);
-                }
-            }
-
             return result.ToString();
         }
         
