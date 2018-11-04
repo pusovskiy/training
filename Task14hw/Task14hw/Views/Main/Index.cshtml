@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Главная страница</title>
+</head>
+<body>
+    <div>
+        <h1>Вы зашли на сайт Торгового Центра "Солнышко"</h1>
+        <p>Спасибо что выбираете нас</p>
+    </div>
+    <div>
+        <ul>
+            <li>@Html.ActionLink("Отделы", "ShowStores", "Detail")</li>
+            <li>@Html.ActionLink("Преимущества", "ShowAdvantage", "Detail")</li>
+            <li>@Html.ActionLink("Адрес", "GetAdress", "Info")</li>
+            <li>@Html.ActionLink("Контакты", "GetContacts", "Info")</li>
+        </ul>
+    </div>
+</body>
+</html>
