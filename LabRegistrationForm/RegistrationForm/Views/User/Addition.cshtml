@@ -1,0 +1,115 @@
+﻿@model RegistrationForm.Models.User
+
+@{
+    ViewBag.Title = "Addition";
+}
+
+@{string choosePost = ViewBag.IsUpdated ? "Addition" : "RegistrateNew";}
+
+@using (Html.BeginForm(choosePost, "User", new { @class = "form-horizontal needs-validation", @novalidate = "true" }))
+{
+    <h2>@(ViewBag.IsUpdated ? "Addition" : "RegistrateNew")</h2>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    if (ViewBag.IsUpdated)
+    {
+        @Html.HiddenFor(m => m.UserId)
+    }
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.MiddleName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control", placeholder = "MiddleName" })
+            @Html.ValidationMessageFor(m => m.MiddleName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "LastName" })
+            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+
+        @Html.Label("E-mail", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @if (ViewBag.IsUpdated)
+            {
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-mail", @readonly = "readonly" })
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-mail" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            }
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @if (ViewBag.IsUpdated)
+            {
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password", type = "Password", @readonly = "readonly" })
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password", type = "Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            }
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.Label("Re-Enter Password", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @if (ViewBag.IsUpdated)
+            {
+                @Html.TextBoxFor(m => m.ReEnterPassword, new { @class = "form-control", placeholder = "Re-enter password", type = "Password", @readonly = "readonly" })
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.ReEnterPassword, new { @class = "form-control", placeholder = "Re-enter password", type = "Password" })
+                @Html.ValidationMessageFor(m => m.ReEnterPassword, "", new { @class = "text-danger" })
+            }
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Age, new { @class = "form-control", placeholder = "Age" })
+            @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Phone" })
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label " })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Address, 6, 0, new { @class = "form-control", placeholder = "Adress" })
+            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-2 col-md-offset-2">
+            <input type="submit" class="btn btn-primary" value=@(ViewBag.IsUpdated ? "Update" : "Add new") />
+        </div>
+        <div class="col-md-2 col-md-pull-1">
+            @Html.ActionLink("Cancel", "Index", "Table", null,new {@class="btn btn-default" })
+        </div>
+    </div>
+
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}
